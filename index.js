@@ -1,12 +1,20 @@
 // console.log('hello!');
 // console.log(process.version);
 
-const { listContacts } = require('./contacts');
+const { listContacts, getContactById } = require('./contacts');
 
 const res = listContacts()
   .then(data => {
-    console.table(JSON.parse(data));
+    console.table(data);
   })
   .catch(error => console.error(error));
 
-console.log(res);
+// console.log(res);
+
+const resById = getContactById('2')
+  .then(data => {
+    console.table(data);
+  })
+  .catch(error => console.error(error));
+
+console.log(resById);

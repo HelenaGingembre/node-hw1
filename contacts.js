@@ -7,14 +7,19 @@ const contactsPath = path.resolve('./db/contacts.json');
 async function listContacts() {
   try {
     const data = await fs.readFile(contactsPath, 'utf-8');
-    return data;
+    return JSON.parse(data);
   } catch (error) {
     console.error(error);
   }
 }
 
-function getContactById(contactId) {
-  // ...твой код
+async function getContactById(contactId) {
+  try {
+    const data = await fs.readFile(contactsPath, 'utf-8');
+    return JSON.parse(data).find(item => item.id === contactId);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function removeContact(contactId) {
@@ -27,4 +32,5 @@ function addContact(name, email, phone) {
 
 module.exports = {
   listContacts,
+  getContactById,
 };
