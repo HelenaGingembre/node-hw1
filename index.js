@@ -1,7 +1,12 @@
 // console.log('hello!');
 // console.log(process.version);
 
-const { listContacts, getContactById } = require('./contacts');
+const {
+  listContacts,
+  getContactById,
+  removeContact,
+  addContact,
+} = require('./contacts');
 
 const res = listContacts()
   .then(data => {
@@ -9,12 +14,16 @@ const res = listContacts()
   })
   .catch(error => console.error(error));
 
-// console.log(res);
+const resById = getContactById(2)
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.error(error));
 
-const resById = getContactById('2')
+const resRemoveById = removeContact(10)
   .then(data => {
     console.table(data);
   })
   .catch(error => console.error(error));
 
-console.log(resById);
+const resAdd = addContact('Allen Lane', 'alen@gmail.com', '(123) 813-3456');

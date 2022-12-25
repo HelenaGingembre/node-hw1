@@ -6,5 +6,6 @@
 #step 2 - 3
 
 - https://monosnap.com/file/iBTBXmVro3B7XVLoEGgJHdUYuTLcFU
+- https://monosnap.com/file/GrysC1lFGnwGhJVWVjcCzmy8KEvNmi
 
 step 4 step 5
