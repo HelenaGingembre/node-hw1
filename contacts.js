@@ -41,6 +41,7 @@ async function removeContact(contactId) {
       item => Number(item.id) !== Number(contactId)
     );
     await writeDB(updateContact);
+    console.log(`Kонтакт deleted, id = ${contactId}`);
   } catch (error) {
     console.error(error);
   }
